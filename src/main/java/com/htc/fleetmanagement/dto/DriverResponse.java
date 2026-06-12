@@ -1,0 +1,62 @@
+package com.htc.fleetmanagement.dto;
+
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+
+import com.htc.fleetmanagement.validator.MailValidator;
+import com.htc.fleetmanagement.util.Role;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class DriverResponse {
+    
+    @NotNull(message = "Employee ID cannot be null")
+    @Positive(message = "Employee ID must be positive")
+    private Integer employeeId;
+    
+    @NotNull(message = "Client ID cannot be null")
+    @Positive(message = "Client ID must be positive")
+    private Integer clientId;
+    
+    @NotBlank(message = "Client name cannot be blank")
+    private String clientName;
+    
+    @NotBlank(message = "Name cannot be blank")
+    private String name;
+    
+    @NotBlank(message = "License number cannot be blank")
+    @Pattern(regexp = "^[A-Z0-9]{6,20}$", message = "License number format is invalid")
+    private String licenseNumber;
+    
+    @NotNull(message = "Risk score cannot be null")
+    @DecimalMin(value = "0.0", message = "Risk score must be non-negative")
+    @DecimalMax(value = "3.0", message = "Risk score must not exceed 3.0")
+    private Float riskScore;
+    
+    @NotNull(message = "Role cannot be null")
+    private Role role;
+    
+    @NotBlank(message = "Contact email cannot be blank")
+    @MailValidator(message = "Contact email should be valid")
+    private String Email;
+    
+    @NotBlank(message = "Username cannot be blank")
+    private String username;
+    
+    @Positive(message = "Manager ID must be positive")
+    private Integer managerId;
+    
+    private LocalDateTime createdAt;
+    
+    private LocalDateTime updatedAt;
+}
