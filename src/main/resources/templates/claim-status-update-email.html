@@ -1,0 +1,101 @@
+<div style="max-width:600px;
+            margin:auto;
+            font-family:Arial;
+            border:1px solid #ddd;
+            border-radius:8px;
+            overflow:hidden;">
+
+    <div style="background:%s;
+                color:white;
+                padding:20px;
+                font-size:20px;">
+        Claim Status Update - %s
+    </div>
+
+    <div style="padding:25px;font-size:14px;color:#333;">
+
+        <p>Dear <b>%s</b>,</p>
+        <p>A fleet claim has been processed and the decision is ready for your review.</p>
+
+        <table style="width:100%%;
+                      border-collapse:collapse;
+                      margin-top:15px;">
+            <tr style="background:#f2f2f2;">
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;
+                           width:40%%;">Claim ID</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">#%d</td>
+            </tr>
+            <tr>
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Driver Name</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">%s</td>
+            </tr>
+            <tr style="background:#f2f2f2;">
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Vehicle VIN</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">%s</td>
+            </tr>
+            <tr>
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Vehicle Make/Model</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">%s</td>
+            </tr>
+            <tr style="background:#f2f2f2;">
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Incident Date</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">%s</td>
+            </tr>
+            <tr>
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Repair Cost</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">&#8377; %s</td>
+            </tr>
+            <tr style="background:#f2f2f2;">
+                <td style="padding:10px;
+                           border:1px solid #ddd;
+                           font-weight:bold;">Decision</td>
+                <td style="padding:10px;
+                           border:1px solid #ddd;">
+                    <span style="background:%s;
+                                 color:white;
+                                 padding:5px 15px;
+                                 border-radius:4px;
+                                 font-weight:bold;">%s %s</span>
+                </td>
+            </tr>
+        </table>
+
+        <div style="margin-top:25px;
+                    padding:15px;
+                    background:%s;
+                    border-left:4px solid %s;
+                    border-radius:4px;">
+            <p style="margin:0;color:#fff;font-weight:bold;">
+                Decision Summary
+            </p>
+            <p style="margin:10px 0 0 0;color:#fff;">
+                %s
+            </p>
+        </div>
+
+        <p style="margin-top:30px;
+                  color:#888;
+                  font-size:12px;">
+            This is an automated notification generated on: %s
+        </p>
+
+    </div>
+</div>
